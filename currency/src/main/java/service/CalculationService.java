@@ -40,7 +40,7 @@ public class CalculationService {
     }
 
     private double getExchangeRate(String originalCurrency, String targetCurrency) {
-        String url = "https://open.er-api.com/v6/latest/" + originalCurrency + "?apikey=your-api-key";
+        String url = "https://open.er-api.com/v6/latest/" + originalCurrency + "?apikey=1905ea856489613ade786564";
         Map<String, Object> response = restTemplate.getForObject(url, HashMap.class);
         Map<String, Double> rates = (Map<String, Double>) response.get("rates");
         return rates.get(targetCurrency);
