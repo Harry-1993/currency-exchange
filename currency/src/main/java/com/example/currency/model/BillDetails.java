@@ -1,5 +1,6 @@
 package com.example.currency.model;
 
+import com.example.currency.enums.UserType;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,19 +8,17 @@ import lombok.ToString;
 
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
-@Data
 public class BillDetails {
     private List<Item> items;
-    private String userType;
-    private int customerTenure;
+    private UserType userType;
+    private double customerTenure;
     private double totalAmount;
     private String originalCurrency;
     private String targetCurrency;
 
-    // Getters and Setters
+    public BillDetails(){
+
+    }
 
     public List<Item> getItems() {
         return items;
@@ -29,19 +28,19 @@ public class BillDetails {
         this.items = items;
     }
 
-    public String getUserType() {
+    public UserType getUserType() {
         return userType;
     }
 
-    public void setUserType(String userType) {
+    public void setUserType(UserType userType) {
         this.userType = userType;
     }
 
-    public int getCustomerTenure() {
+    public double getCustomerTenure() {
         return customerTenure;
     }
 
-    public void setCustomerTenure(int customerTenure) {
+    public void setCustomerTenure(double customerTenure) {
         this.customerTenure = customerTenure;
     }
 

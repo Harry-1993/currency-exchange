@@ -1,20 +1,19 @@
 package com.example.currency.model;
 
+import com.example.currency.enums.CategoryType;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
-@ToString
-@Data
 public class Item {
     private String name;
-    private String category;
+    private CategoryType category;
     private double price;
 
-    // Getters and Setters
+    public Item(){
+
+    }
 
     public String getName() {
         return name;
@@ -24,11 +23,11 @@ public class Item {
         this.name = name;
     }
 
-    public String getCategory() {
+    public CategoryType getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(CategoryType category) {
         this.category = category;
     }
 
