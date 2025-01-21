@@ -38,7 +38,7 @@ class CalculationServiceTest {
         rates.put("EUR", 0.85);
         mockResponse.put("rates", rates);
 
-        when(restTemplate.getForObject("https://open.er-api.com/v6/latest/USD?apikey=your-api-key", HashMap.class))
+        when(restTemplate.getForObject("https://open.er-api.com/v6/latest/USD?apikey=1905ea856489613ade786564", HashMap.class))
                 .thenReturn((HashMap) mockResponse);
 
         double payableAmount = calculationService.calculatePayableAmount(billDetails);
