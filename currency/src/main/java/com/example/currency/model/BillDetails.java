@@ -1,5 +1,6 @@
-package model;
+package com.example.currency.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,6 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@Data
 public class BillDetails {
     private List<Item> items;
     private String userType;

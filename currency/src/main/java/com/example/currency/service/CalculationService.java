@@ -1,6 +1,6 @@
-package service;
+package com.example.currency.service;
 
-import model.BillDetails;
+import com.example.currency.model.BillDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -34,13 +34,13 @@ public class CalculationService {
             discount = billDetails.getTotalAmount() * 0.05;
         }
 
-        discount += (int) (billDetails.getTotalAmount() / 100) * 5;
+       // discount += (int) (billDetails.getTotalAmount() / 100) * 5;
 
         return discount;
     }
 
     private double getExchangeRate(String originalCurrency, String targetCurrency) {
-        String url = "https://open.er-api.com/v6/latest/" + originalCurrency + "?apikey=https://open.er-api.com/v6/latest/USD?apikey=091e4fe22c2840fbb854ba4112f6f206";
+        String url = "https://open.er-api.com/v6/latest/" + originalCurrency + "?apikey=091e4fe22c2840fbb854ba4112f6f206";
         Map<String, Object> response = restTemplate.getForObject(url, HashMap.class);
         Map<String, Double> rates = (Map<String, Double>) response.get("rates");
         return rates.get(targetCurrency);

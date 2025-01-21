@@ -1,5 +1,6 @@
-package model;
+package com.example.currency.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,6 +8,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Data
 public class Item {
     private String name;
     private String category;

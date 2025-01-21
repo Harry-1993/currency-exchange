@@ -1,14 +1,16 @@
-package controller;
+package com.example.currency.controller;
 
-import model.BillDetails;
+import com.example.currency.model.BillDetails;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.CalculationService;
+import com.example.currency.service.CalculationService;
 
 @RestController
 @RequestMapping("/api")
 public class CalculationController {
 
+    @Autowired
     private final CalculationService calculationService;
 
     public CalculationController(CalculationService calculationService) {
