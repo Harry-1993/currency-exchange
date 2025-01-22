@@ -80,7 +80,7 @@ class CalculationServiceTest {
         // Total grocery amount remains unchanged
         // Total discounted amount = 315 + 50 = 365
         // Exchange rate applied: 365 * 0.965172 = 352.28778
-        assertEquals(352.28778, payableAmount, 0.01);
+        assertEquals(352.28778, payableAmount);
     }
 
     /**
@@ -123,6 +123,6 @@ class CalculationServiceTest {
         // Total grocery amount remains unchanged
         // Total discounted amount = 405 + 50 = 455
         // Exchange rate applied: 455 * 0.965172 = 439.15326
-        assertEquals(439.15326, payableAmount, 0.01);
+        assertEquals(439.15326, payableAmount);
     }
 }
