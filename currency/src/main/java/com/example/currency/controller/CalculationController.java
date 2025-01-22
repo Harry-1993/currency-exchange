@@ -32,8 +32,10 @@ public class CalculationController {
      * @return ResponseEntity containing the calculated payable amount.
      */
     @PostMapping("/calculate")
-    public ResponseEntity<Double> calculate(@RequestBody BillDetails billDetails) {
+    public ResponseEntity<String> calculate(@RequestBody BillDetails billDetails) {
         double payableAmount = calculationService.calculatePayableAmount(billDetails);
-        return ResponseEntity.ok(payableAmount);
+        String formattedAmount = String.format("%.4f", payableAmount); // Format to 4 decimal places
+        String responseMessage = "The Final Payable Amount is: " + formattedAmount;
+        return ResponseEntity.ok(responseMessage);
     }
 }

@@ -32,24 +32,29 @@ This is a Spring Boot application designed to calculate the final payable amount
 ### Request Body
 ```json
 {
-  "userType": "employee",
-  "customerTenure": 3,
-  "totalAmount": 200,
-  "originalCurrency": "USD",
-  "targetCurrency": "EUR",
-  "items": [
-    {
-      "name": "Laptop",
-      "category": "Electronics",
-      "price": 200
-    }
-  ]
+   "userType": "EMPLOYEE",
+   "customerTenure": 3,
+   "totalAmount": 500,
+   "originalCurrency": "USD",
+   "targetCurrency": "AED",
+   "items": [
+      {
+         "name": "Laptop",
+         "category": "ELECTRONICS",
+         "price": 450
+      },
+      {
+         "name": "Appple",
+         "category": "GROCERY",
+         "price": 50
+      }
+   ]
 }
 ```
 
 ### Response
 ```json
-110.5
+"The Final Payable Amount is: 1340.4625"
 ```
 
 ## Testing

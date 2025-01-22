@@ -5,7 +5,7 @@ import com.example.currency.model.Item;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
+import org.springframework.security.access.prepost.PreAuthorize;
 import java.util.*;
 
 /**
@@ -40,13 +40,14 @@ public class CalculationService {
      * @param billDetails the details of the bill, including items, user type, and currency details.
      * @return the final payable amount after discounts and conversion.
      */
+    @PreAuthorize("hasAnyRole('EMPLOYEE', 'AFFILIATE', 'ADMIN')")
     public double calculatePayableAmount(BillDetails billDetails) {
         List<Item> groceryItems = itemSegregationGrocery(billDetails);
         double actualAmount = itemsSegregation(billDetails);
         double discount = calculateDiscount(billDetails, actualAmount);
 
         double groceryDiscount = 0.0;
-        if (groceryItems.size() > 0) {
+        if (!groceryItems.isEmpty()) {
             groceryDiscount = discountAppliedAfterPercentageDiscount(billDetails.getTotalAmount() - actualAmount);
             groceryDiscount = billDetails.getTotalAmount() - actualAmount - groceryDiscount;
         }
