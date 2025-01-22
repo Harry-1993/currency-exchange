@@ -29,6 +29,11 @@ This is a Spring Boot application designed to calculate the final payable amount
 ### Endpoint
 `POST /api/calculate`
 
+## Authentication
+Select basic authentication
+username:- employee, affiliate, admin
+passwords:- password, password, admin
+
 ### Request Body
 ```json
 {
